@@ -1,0 +1,126 @@
+:root {
+  --primary-color: #081828;
+  --primary-color-blue: #0167f3;
+  --white-color: #fff;
+  --border-color: #dadada;
+
+  --purpose-color: #9b51e0;
+  --green-color: #8bc38a;
+  --blue-color: #438ffe;
+  --green-second-color: #83bcbd;
+  --yellow-color: #f2994a;
+}
+
+* {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  line-height: 1.4rem;
+  font-family: 'Fira Code', monospace;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a:hover {
+  text-decoration:none!important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes growth {
+  from {
+    transform: scale(--growthFrom);
+  }
+  to {
+    transform: scale(--growthTo);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0,40px,0)
+  }
+
+  to {
+    transform: translate3d(0,0,0);
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0,40px,0)
+  }
+
+  to {
+    transform: translate3d(0,0,0);
+    opacity: 1
+  }
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+}
+
+/* Button */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: var(--primary-color-blue);
+  font-size: 1.4rem;
+  border: none;
+  outline: none;
+  transition: all 0.3s;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: var(--white-color) !important;
+  background-color: var(--primary-color) !important;
+}
+
+.input {
+  width: 100%;
+  flex: 1;
+  height: 45px;
+  font-size: 1.4rem;
+  outline: none;
+  border: 1px solid var(--border-color);
+  outline: none;
+}
+
+/* Content */
+.section {
+  padding: 100px 0;
+}
+
+
