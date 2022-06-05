@@ -115,6 +115,7 @@
   animation: fadeIn 0.3s;
   transition: all 0.3s;
   display: none;
+  z-index: 12;
 }
 
 .navbar-cart-group .shopping-item:before {
