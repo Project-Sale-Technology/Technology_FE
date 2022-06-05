@@ -134,4 +134,46 @@ a {
   padding: 100px 0;
 }
 
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.section-title h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.section-title h2::before {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  content: "";
+  background-color: var(--primary-color-blue);
+  margin-left: -25px;
+  border-radius: 2px;
+  height: 2px;
+  width: 50px;
+}
+
+.section-title p {
+  font-size: 14px;
+  color: #888;
+  font-weight: 400;
+  width: 50%;
+  text-align: center;
+}
+
+.section-title span {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary-color-blue);
+}
+
 
