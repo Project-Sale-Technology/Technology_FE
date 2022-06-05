@@ -134,6 +134,13 @@ a {
   padding: 100px 0;
 }
 
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .section-title h2 {
   font-size: 3rem;
   font-weight: 700;
@@ -158,7 +165,9 @@ a {
 .section-title p {
   font-size: 14px;
   color: #888;
-  font-weight: 600;
+  font-weight: 400;
+  width: 50%;
+  text-align: center;
 }
 
 .section-title span {
