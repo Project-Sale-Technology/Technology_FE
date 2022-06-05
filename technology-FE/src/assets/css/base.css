@@ -136,10 +136,11 @@ a {
 
 .section-title h2 {
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: 700;
   padding-bottom: 20px;
   margin-bottom: 20px;
   position: relative;
+  text-align: center;
 }
 
 .section-title h2::before {
