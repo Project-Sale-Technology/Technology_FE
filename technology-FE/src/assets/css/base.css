@@ -134,4 +134,36 @@ a {
   padding: 100px 0;
 }
 
+.section-title h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2::before {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  content: "";
+  background-color: var(--primary-color-blue);
+  margin-left: -25px;
+  border-radius: 2px;
+  height: 2px;
+  width: 50px;
+}
+
+.section-title p {
+  font-size: 14px;
+  color: #888;
+  font-weight: 600;
+}
+
+.section-title span {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary-color-blue);
+}
+
 
