@@ -233,13 +233,14 @@
 
 .single-product__img-group {
   max-width: 240px;
-  max-height: 240px;
+  height: 240px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .single-product__img-group img {
@@ -321,4 +322,45 @@
 .single-product__cart .button i {
   margin-right: 8px;
   font-size: 1.6rem;
+}
+
+/* Sale ads */
+.sale-ads .navbar-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 42px 0 0 0;
+  border-bottom: 2px solid #eee;
+}
+
+.sale-ads .navbar-tabs li {
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transform: translateY(2px);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sale-ads .navbar-tabs li:hover {
+  color: var(--primary-color-blue);
+}
+
+.sale-ads .navbar-tabs li.active {
+  color: var(--primary-color-blue);
+  border-bottom: 2px solid var(--primary-color-blue);
+}
+
+.single-product .sale {
+  position: absolute;
+  background-color: #dc3545;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 1.3rem;
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  text-transform: capitalize;
+  top: 15px;
+  right: 15px;
 }

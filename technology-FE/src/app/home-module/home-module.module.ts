@@ -12,7 +12,7 @@ import {CommonModule} from "../common/common.module";
   imports: [
     CommonModule,
     HomeModuleRoutingModule,
-    CommonModule
+    CommonModule,
   ]
 })
 export class HomeModuleModule { }
