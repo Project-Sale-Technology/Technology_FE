@@ -402,3 +402,56 @@
   object-fit: cover;
   opacity: 0.8;
 }
+
+/* Shipping Info */
+.shipping-info {
+  padding: 50px 0;
+  background-color: #fff;
+}
+
+.shipping-info .shipping-info__list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+}
+
+.shipping-info .shipping-info__list li {
+  width: 25%;
+  padding: 30px 40px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.shipping-info .shipping-info__list li i {
+  color: var(--primary-color-blue);
+  font-size: 3.5rem;
+}
+
+.shipping-info .shipping-info__list li .media-body {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.shipping-info .shipping-info__list li .media-body h4 {
+  margi-top: 4px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.shipping-info .shipping-info__list li .media-body span {
+  color: #777;
+  font-size: 1.4rem;
+}
+
+.shipping-info .shipping-info__list li {
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.shipping-info .shipping-info__list li:hover {
+  background-color: #f9f9f9;
+}
