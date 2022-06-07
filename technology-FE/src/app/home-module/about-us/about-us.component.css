@@ -1,0 +1,60 @@
+.about-us__container {
+  background-color: #f9f9f9;
+}
+
+.about-us__container .about-us__img-group {
+  position: relative;
+  border-radius: 5px;
+}
+
+.about-us__container .button-watch__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  height: 80px;
+  width: 80px;
+  font-size: 3.2rem;
+  color: var(--primary-color-blue);
+  transition: all 0.3s;
+  background-color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+
+.about-us__container .button-watch__video:before {
+  position: absolute;
+  content: "";
+  -webkit-animation: border-pulsate 2s linear infinite;
+  animation: border-pulsate 2s linear infinite;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+
+.about-us__container .button-watch__video:hover {
+  background-color: var(--primary-color-blue);
+  color: #fff;
+}
+
+.about-us__container .content-right {
+  padding-left: 40px;
+}
+
+.about-us__container .content-right .title {
+  font-size: 3.4rem;
+  margin-bottom: 25px;
+  text-transform: capitalize;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+}
+
+.about-us__container .content-right p {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #888;
+}
