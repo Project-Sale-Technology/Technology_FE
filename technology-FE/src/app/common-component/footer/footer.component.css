@@ -1,0 +1,203 @@
+.footer__container {
+  background-color: var(--primary-color);
+  border-bottom: 1px solid #ffffff26;
+}
+
+.footer__container .footer__header {
+  border-bottom: 1px solid #ffffff26;
+  padding: 60px 0;
+}
+
+.footer__container .footer-newsletter {
+  text-align: left;
+}
+
+.footer__container img.logo {
+  width: 200px;
+}
+
+.footer__container .footer-newsletter h3 {
+  font-size: 2.2rem;
+  color: #fff;
+  font-weight: 600;
+  margin: 0;
+}
+
+.footer__container .footer-newsletter span {
+  color: #c2c2c2;
+  font-size: 1.5rem;
+}
+
+.footer__container .footer__form {
+  display: flex;
+  align-items: center;
+}
+
+.footer__container .footer__form input {
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.308);
+  color: #fff;
+  padding: 0 20px;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.5rem;
+}
+
+.footer__container .footer__form input::placeholder {
+  color: #fff;
+}
+
+.footer__container .footer__form button {
+  height: 50px;
+  padding: 13px 30px;
+  border-radius: 5px;
+  margin-left: 8px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.footer__container .footer__form button:hover {
+  color: var(--primary-color-blue) !important;
+  background-color: #fff !important;
+}
+
+.footer__container .footer__middle {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.footer__container .single-footer h3 {
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.footer__container .single-footer h3:before {
+  position: absolute;
+  content: "";
+  background-color: var(--primary-color-blue);
+  height: 2px;
+  width: 13%;
+  bottom: -15px;
+}
+
+.footer__container .footer__middle-list {
+  margin: 32px 0 0 0;
+}
+
+.footer__container .footer__middle-list li span ,
+.footer__container .footer__middle-list li a {
+  font-size: 1.5rem;
+  color: #d6d6d6;
+  font-weight: 500;
+  display: block;
+  margin: 12px 0;
+  transition: all 0.3s;
+}
+
+.footer__container .footer__middle-list li a:hover ,
+.footer__bottom .middle-area a:hover{
+  color: var(--primary-color-blue) !important;
+}
+
+.footer__container .app-download a.first {
+  margin: 32px 0 12px 0;
+}
+
+.footer__container .app-download a {
+  margin: 12px 0;
+  padding: 15px 20px;
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff0f;
+  border-radius: 3px;
+  width: 200px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.footer__container .app-download a:hover ,
+.footer__bottom .right-area .social .circle:hover{
+  background-color: var(--primary-color-blue) !important;
+  color: #fff !important;
+}
+
+.footer__container .app-download i {
+  font-size: 3rem;
+  margin-right: 14px;
+}
+
+.footer__container .footer__middle-list .right-position {
+  position: relative;
+  right: 0;
+}
+
+.footer__container .footer__middle-list .right-position:hover {
+  right: -4px;
+}
+
+.footer__container .footer__bottom {
+  border-top: 1px solid #ffffff26;
+  padding: 25px 0;
+}
+
+.footer__container .footer__bottom .left-area {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.footer__bottom .left-area img {
+  object-fit: cover;
+  margin-left: 12px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.footer__bottom .middle-area {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.footer__bottom .middle-area a {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.footer__bottom .right-area {
+  display: flex;
+  align-items: center;
+}
+
+.footer__bottom .right-area .social {
+  display: flex;
+  align-items: center;
+}
+
+.footer__bottom .right-area span {
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.footer__bottom .right-area .social .circle {
+  height: 34px;
+  width: 34px;
+  margin-right: 8px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+  transform: translateY(4px);
+}
+
+

@@ -1,1 +1,67 @@
-<p>login works!</p>
+<app-header-top></app-header-top>
+<app-header-middle></app-header-middle>
+<app-header-navbar></app-header-navbar>
+<app-header-footer [currentPage]="currentPage"></app-header-footer>
+
+<div class="login__page-container section">
+  <div class="container">
+    <form class="login__page-form">
+      <div class="header">
+        <h3 class="title">Login Now</h3>
+        <span>You can login using your social media account or email address.</span>
+      </div>
+
+      <div class="social">
+        <div class="row">
+          <div class="col-4">
+            <div class="social-item facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+              <span>Facebook Login</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="social-item twitter">
+              <i class="fa-brands fa-twitter"></i>
+              <span>Twitter Login</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="social-item google">
+              <i class="fa-brands fa-google"></i>
+              <span>Google Login</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alt-option">
+        <span>Or</span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" class="input">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="input">
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-between mt-5">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input width-auto" id="remember">
+          <label for="remember">Remember Me</label>
+        </div>
+
+        <a class="forgot">Forgot Password?</a>
+      </div>
+
+      <button class="button">Login</button>
+
+      <p class="no-account">Don't have an account? <a>Register here</a></p>
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>

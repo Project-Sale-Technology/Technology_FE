@@ -8,10 +8,13 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
 
 
 @NgModule({
-  declarations: [CreateEmployeeComponent, ListEmployeeComponent, UpdateEmployeeComponent],
-  imports: [
-    CommonModule,
-    EmployeeModuleRoutingModule
-  ]
+    declarations: [CreateEmployeeComponent, ListEmployeeComponent, UpdateEmployeeComponent],
+    exports: [
+        CreateEmployeeComponent
+    ],
+    imports: [
+        CommonModule,
+        EmployeeModuleRoutingModule
+    ]
 })
 export class EmployeeModuleModule { }
