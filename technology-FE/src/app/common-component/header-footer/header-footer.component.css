@@ -27,6 +27,15 @@
   margin-right: 6px;
 }
 
+.header__footer-container .current-page .right-area a {
+  color: #888 !important;
+  transition:  all 0.3s;
+}
+
+.header__footer-container .current-page .right-area a:hover {
+  color: var(--primary-color-blue) !important;
+}
+
 .header__footer-container .current-page .right-area {
   transition:  all 0.3s;
   cursor: pointer;

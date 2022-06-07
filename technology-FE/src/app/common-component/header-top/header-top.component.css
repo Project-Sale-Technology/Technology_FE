@@ -26,11 +26,12 @@
   padding: 5px 15px;
   transition: all 0.2s;
   cursor: pointer;
+  color: #fff !important;
 }
 
 .header__top-home-left-area li a:hover ,
 .header__top-home-right-area li a:hover {
-  color: var(--primary-color-blue);
+  color: var(--primary-color-blue) !important;
 }
 
 .header__top-home-right-area li .name ,

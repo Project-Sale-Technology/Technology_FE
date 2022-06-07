@@ -7,8 +7,8 @@ import {HomeContactComponent} from "./home-contact/home-contact.component";
 
 const routes: Routes = [
   {path: "" , component: HomeComponent} ,
-  {path: "/home-about-us" , component: AboutUsComponent} ,
-  {path: "/home-contact" , component: HomeContactComponent}
+  {path: "home-about-us" , component: AboutUsComponent} ,
+  {path: "home-contact" , component: HomeContactComponent}
 ];
 
 @NgModule({
