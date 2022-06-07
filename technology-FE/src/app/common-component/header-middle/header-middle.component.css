@@ -6,7 +6,6 @@
 .home__header-middle-container {
   display: flex;
   align-items: center;
-  /*justify-content: space-between;*/
 }
 
 .home__header-middle-img-group {
@@ -130,6 +129,11 @@
 
 .navbar-cart__group.has--cart:hover .has-cart {
   opacity: 1;
+  display: none;
+}
+
+.navbar-cart__group.has--cart:hover .has-cart {
+ display: block;
 }
 
 .home__header-middle .navbar-cart__group .has-cart:before{
