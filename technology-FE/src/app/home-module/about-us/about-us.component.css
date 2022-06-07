@@ -23,21 +23,16 @@
   cursor: pointer;
 }
 
-@keyframes border-pulsate {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-  }
 
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
+.about-us__container .button-watch__video:before {
+  position: absolute;
+  content: "";
+  -webkit-animation: border-pulsate 2s linear infinite;
+  animation: border-pulsate 2s linear infinite;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
 }
 
 
