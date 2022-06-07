@@ -349,6 +349,13 @@
 .sale-ads .navbar-tabs li.active {
   color: var(--primary-color-blue);
   border-bottom: 2px solid var(--primary-color-blue);
+  transition: all 0.3s;
+  animation: fadeIn 0.3s;
+}
+
+.sale-ads .show-ads {
+  animation: fadeInUp 0.5s , fadeIn 0.5s;
+  transition: all 0.3s;
 }
 
 .single-product .sale {
@@ -363,4 +370,88 @@
   text-transform: capitalize;
   top: 15px;
   right: 15px;
+}
+
+/* Popular brands */
+.popular-brands {
+  background-color: #f9f9f9;
+}
+
+.popular-brands .popular-brands__slide .col-2:first-child{
+  padding-left: 15px !important;
+}
+
+.popular-brands .popular-brands__slide .col-2:last-child {
+  padding-right: 15px !important;
+}
+
+.popular-brands .popular-brands__slide .col-2,
+.popular-brands .popular-brands__slide .col-2 {
+  padding: 0 !important;
+}
+
+.popular-brands__img-group {
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.popular-brands__img-group img {
+  width: 100px;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+/* Shipping Info */
+.shipping-info {
+  padding: 50px 0;
+  background-color: #fff;
+}
+
+.shipping-info .shipping-info__list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+}
+
+.shipping-info .shipping-info__list li {
+  width: 25%;
+  padding: 30px 40px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.shipping-info .shipping-info__list li i {
+  color: var(--primary-color-blue);
+  font-size: 3.5rem;
+}
+
+.shipping-info .shipping-info__list li .media-body {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.shipping-info .shipping-info__list li .media-body h4 {
+  margi-top: 4px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.shipping-info .shipping-info__list li .media-body span {
+  color: #777;
+  font-size: 1.4rem;
+}
+
+.shipping-info .shipping-info__list li {
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.shipping-info .shipping-info__list li:hover {
+  background-color: #f9f9f9;
 }

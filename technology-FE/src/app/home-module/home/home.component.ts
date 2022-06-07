@@ -7,14 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   /* Check click sale product */
-  clickedSale = true;
+  clickedSale = 0;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  clickSale() {
-    this.clickedSale = true;
+  clickSale(input?: number) {
+    this.clickedSale = input;
   }
 }
