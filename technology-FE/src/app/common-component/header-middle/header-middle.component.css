@@ -122,14 +122,13 @@
   border-radius: 3px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 20px 25px;
-  animation: fadeIn 0.3s , growth 0.3s;
+  animation: fadeIn 0.3s, growth 0.3s;
   transition: all 0.3s;
-  opacity: 0;
+  display: none;
 }
 
 .navbar-cart__group.has--cart:hover .has-cart {
-  opacity: 1;
-  display: none;
+  display: block;
 }
 
 .navbar-cart__group.has--cart:hover .has-cart {
