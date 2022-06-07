@@ -1,7 +1,7 @@
 .header__footer-container {
   padding: 30px 0;
-  box-shadow: 0px 7px 30px rgb(0 0 0 / 8%);
   background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .header__footer-group {
