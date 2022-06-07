@@ -349,6 +349,13 @@
 .sale-ads .navbar-tabs li.active {
   color: var(--primary-color-blue);
   border-bottom: 2px solid var(--primary-color-blue);
+  transition: all 0.3s;
+  animation: fadeIn 0.3s;
+}
+
+.sale-ads .show-ads {
+  animation: fadeInUp 0.5s , fadeIn 0.5s;
+  transition: all 0.3s;
 }
 
 .single-product .sale {

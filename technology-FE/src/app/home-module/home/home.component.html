@@ -676,12 +676,404 @@
       </div>
 
       <ul class="navbar-tabs">
-        <li (click)="clickSale()">Latest Ads</li>
-        <li>Popular Ads</li>
-        <li>Random Ads</li>
+        <li (click)="clickSale(0)" [ngClass]="clickedSale == 0 ?'active':null">Latest Ads</li>
+        <li (click)="clickSale(1)" [ngClass]="clickedSale == 1 ?'active':null">Popular Ads</li>
+        <li (click)="clickSale(2)" [ngClass]="clickedSale == 2 ?'active':null">Random Ads</li>
       </ul>
 
-      <div class="latest-ads">
+      <div *ngIf="clickedSale == 0" class="show-ads">
+        <div class="row">
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="clickedSale == 1" class="show-ads">
+        <div class="row">
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-3.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="clickedSale == 2" class="show-ads">
         <div class="row">
           <div class="col-3">
             <div class="single-product">
