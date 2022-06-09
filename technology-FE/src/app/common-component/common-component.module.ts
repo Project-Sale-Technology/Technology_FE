@@ -5,6 +5,7 @@ import {HeaderNavbarComponent} from "./header-navbar/header-navbar.component";
 import {HeaderMiddleComponent} from "./header-middle/header-middle.component";
 import {FooterComponent} from "./footer/footer.component";
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [HeaderTopComponent, HeaderNavbarComponent, HeaderMiddleComponent, FooterComponent, HeaderFooterComponent],
@@ -15,8 +16,9 @@ import { HeaderFooterComponent } from './header-footer/header-footer.component';
         FooterComponent,
         HeaderFooterComponent
     ],
-  imports: [
-    CommonModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule
+    ]
 })
 export class CommonComponentModule { }
