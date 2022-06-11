@@ -13,9 +13,7 @@
         <div class="middle-area">
           <form class="middle-area__form">
             <select class="input">
-              <option>Option</option>
-              <option>Option</option>
-              <option>Option</option>
+              <option *ngFor="let cate of categories">{{cate.name}}</option>
             </select>
 
             <input type="text" class="input" placeholder="Search">

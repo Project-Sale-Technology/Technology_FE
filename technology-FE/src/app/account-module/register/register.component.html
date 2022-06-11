@@ -1,1 +1,33 @@
-<p>register works!</p>
+<app-header-top></app-header-top>
+<app-header-middle></app-header-middle>
+<app-header-navbar></app-header-navbar>
+<app-header-footer [currentPage]="currentPage"></app-header-footer>
+
+<div class="register-page__container section">
+  <div class="container">
+    <form class="register-page__form">
+      <div class="header">
+        <h3>No Account? Register</h3>
+        <p>Registration takes less than a minute but gives you full control over your orders.</p>
+      </div>
+
+      <input type="text" class="input" placeholder="Enter Your Name">
+      <input type="email" class="input" placeholder="Enter Your Email">
+      <input type="password" class="input" placeholder="Password">
+      <input type="password" class="input" placeholder="Confirm Password">
+
+      <div class="d-flex align-items-center">
+        <input type="text" class="mr-4 input" placeholder="Phone Number">
+        <select class="input">
+          <option value="">Đà Nẵng</option>
+        </select>
+      </div>
+
+      <button class="button">Register</button>
+
+      <span>Already have an account? <a routerLink="/customer/login">Login Now</a></span>
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>
