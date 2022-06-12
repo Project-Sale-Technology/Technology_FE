@@ -146,6 +146,25 @@ a {
   font-size: 1.6rem;
 }
 
+.pagination .node {
+  height: 40px;
+  width: 40px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border: 1px solid var(--border-color);
+  background-color: #fff !important;
+  cursor: pointer;
+  transition:  all 0.3s;
+}
+
+.pagination .node:hover {
+  background-color: var(--primary-color-blue) !important;
+  color: #fff;
+}
+
 /* Content */
 .section {
   padding: 100px 0;

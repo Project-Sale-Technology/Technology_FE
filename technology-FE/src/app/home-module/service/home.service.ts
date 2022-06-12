@@ -11,14 +11,36 @@ const API_URL = "http://localhost:8080/home";
 })
 export class HomeService {
 
+  /* Define size page and current page */
+  currentPage:number = 0;
+  sizePage:number = 8;
+
+  /* Next and prev */
+  nextPage(currentPage: number) {
+    this.currentPage = currentPage;
+  }
+
+  prevPage(currentPage: number) {
+    this.currentPage = currentPage;
+  }
+
+  redirectPagination(currentPage: number) {
+    this.currentPage = currentPage;
+  }
+
   /* Get all products */
   getAllProducts(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(`${API_URL}/products`);
+    return this.httpClient.get<Product[]>(`${API_URL}/products/${this.currentPage}&${this.sizePage}`);
   }
 
   /* Get categories */
   getAllCategories(): Observable<Category[]> {
     return this.httpClient.get<Category[]>(`${API_URL}/category`);
+  }
+
+  /* Get amount of products */
+  getAmountOfProducts(): Observable<number> {
+    return this.httpClient.get<number>(`${API_URL}/products/amount`);
   }
 
   constructor(private httpClient: HttpClient) { }
