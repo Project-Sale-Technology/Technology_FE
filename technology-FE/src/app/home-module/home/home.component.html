@@ -335,7 +335,7 @@
           <li class="node" (click)="redirectPagination(tg+1)"
               *ngFor="let tg of totalPageArray" [ngClass]="activedButton==tg+1?'active':null">{{tg+1}}</li>
 
-          <li (click)="nextPage()" class="node prev" *ngIf="this.lastButton+1 != this.totalPageArray.length">
+          <li (click)="nextPage()" class="node prev" *ngIf="this.activedButton != this.totalPageArray.length">
             <i class="ti-angle-right"></i>
           </li>
         </ul>

@@ -29,9 +29,6 @@ export class HomeComponent implements OnInit {
   /* Active button */
   activedButton = 1;
 
-  /* Count current page */
-  lastButton: number;
-
 
   constructor(private homeService: HomeService) { }
 
@@ -65,14 +62,12 @@ export class HomeComponent implements OnInit {
   pagination(amountProducts: number) {
     this.totalPage = Math.floor(amountProducts / this.sizePage);
     this.totalPageSurplus = Math.floor(amountProducts % this.sizePage);
-    if(this.totalPageSurplus % 2 != 0) {
-      this.totalPageArray = Array(this.totalPage + 1).fill(1).map((x,i)=>i);
+    /* Set numbers of page */
+    if (this.totalPageSurplus != 0) {
+      this.totalPageArray = Array(this.totalPage+1).fill(1).map((x, i) => i);
     } else {
-      this.totalPageArray = Array(this.totalPage).fill(1).map((x,i)=>i);
+      this.totalPageArray = Array(this.totalPage).fill(1).map((x, i) => i);
     }
-
-    /* Get location last button */
-    this.lastButton = Math.floor(this.currentPage / this.sizePage);
   }
 
   /* Check button next and prev */
@@ -88,7 +83,6 @@ export class HomeComponent implements OnInit {
   prevPage() {
     this.currentPage -= this.sizePage;
     this.homeService.prevPage(this.currentPage);
-    console.log(this.currentPage);
     this.getAll();
 
     /* Check location current page */
@@ -103,17 +97,11 @@ export class HomeComponent implements OnInit {
       this.currentPage = 1;
       this.amountProducts = data;
 
-      /* Handle first page */
-      if(tg == 1) {
+      /* Handle redirect page */
+      if (tg == 1) {
         this.currentPage = 0;
-      }
-
-      if (this.amountProducts % tg != 0) {
+      } else {
         tg -= 1;
-        this.currentPage = tg * this.sizePage;
-      }
-
-      if(tg != 1 && this.amountProducts % tg == 0) {
         this.currentPage = tg * this.sizePage;
       }
       this.homeService.redirectPagination(this.currentPage);
@@ -127,6 +115,5 @@ export class HomeComponent implements OnInit {
   /* Check active button and get location current of page */
   checkActiveButton(currentPage: number) {
     this.activedButton = Math.round(currentPage / this.sizePage) + 1;
-    console.log(this.activedButton);
   }
 }
