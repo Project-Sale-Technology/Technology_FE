@@ -456,19 +456,3 @@
   background-color: #f9f9f9;
 }
 
-.trending-product .pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 42px;
-}
-
-.trending-product .pagination .active {
-  background-color: var(--primary-color-blue) !important;
-  color: #fff;
-}
-
-.pagination .node {
-  margin-left: 8px;
-}
