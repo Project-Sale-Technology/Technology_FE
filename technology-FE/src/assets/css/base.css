@@ -33,7 +33,7 @@ li {
 }
 
 a:hover {
-  text-decoration:none!important;
+  text-decoration: none !important;
 }
 
 a {
@@ -61,22 +61,22 @@ a {
 
 @keyframes fadeInUp {
   from {
-    transform: translate3d(0,40px,0)
+    transform: translate3d(0, 40px, 0)
   }
 
   to {
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
     opacity: 1
   }
 }
 
 @-webkit-keyframes fadeInUp {
   from {
-    transform: translate3d(0,40px,0)
+    transform: translate3d(0, 40px, 0)
   }
 
   to {
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
     opacity: 1
   }
 }
@@ -146,23 +146,75 @@ a {
   font-size: 1.6rem;
 }
 
-.pagination .node {
-  height: 40px;
-  width: 40px;
-  border-radius: 3px;
+pagination-controls {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  margin-top: 42px !important;
+}
+
+ul.ngx-pagination {
+  margin: 0 !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  border: 1px solid var(--border-color);
-  background-color: #fff !important;
-  cursor: pointer;
-  transition:  all 0.3s;
 }
 
-.pagination .node:hover {
+ul.ngx-pagination li {
+  height: 40px;
+  width: 40px;
+  border-radius: 3px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border: 1px solid var(--border-color) !important;
+  background-color: #fff !important;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #000 !important;
+  margin-left: 8px;
+}
+
+ul.ngx-pagination li.disabled {
+  display: none !important;
+}
+
+ul.ngx-pagination li.current {
   background-color: var(--primary-color-blue) !important;
-  color: #fff;
+  color: #fff !important;
+}
+
+ul.ngx-pagination li:hover {
+  background-color: var(--primary-color-blue) !important;
+  color: #fff !important;
+}
+
+ul.ngx-pagination li a {
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul.ngx-pagination li a:hover {
+  background-color: transparent !important;
+  color: #fff !important;
+  cursor: pointer;
+}
+
+ul.ngx-pagination .small-screen {
+  display: none !important;
+}
+
+.ngx-pagination .pagination-previous a::before,
+.ngx-pagination .pagination-previous.disabled::before ,
+.ngx-pagination .pagination-next a::after,
+.ngx-pagination .pagination-next.disabled::after{
+  margin: 0 !important;
+  font-size: 2.8rem;
+  transform: translateY(-3px) !important;
 }
 
 /* Content */
