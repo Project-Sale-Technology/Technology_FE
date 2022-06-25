@@ -146,6 +146,18 @@ a {
   font-size: 1.6rem;
 }
 
+.error-alert {
+  font-weight: 600;
+  font-size: 1.3rem;
+  height: 45px !important;
+  display: flex;
+  align-items: center;
+}
+
+input.error-border {
+  border: 1px solid #ff3333;
+}
+
 /* Content */
 .section {
   padding: 100px 0;
