@@ -5,29 +5,118 @@
 
 <div class="register-page__container section">
   <div class="container">
-    <form class="register-page__form">
+    <form class="register-page__form" [formGroup]="formRegister" (ngSubmit)="handleRegister()">
       <div class="header">
         <h3>No Account? Register</h3>
         <p>Registration takes less than a minute but gives you full control over your orders.</p>
       </div>
 
-      <input type="text" class="input" placeholder="Enter Your Name">
-      <input type="email" class="input" placeholder="Enter Your Email">
-      <input type="password" class="input" placeholder="Password">
-      <input type="password" class="input" placeholder="Confirm Password">
-
-      <div class="d-flex align-items-center">
-        <input type="text" class="mr-4 input" placeholder="Phone Number">
-        <select class="input">
-          <option value="">Đà Nẵng</option>
-        </select>
+      <div class="form-group">
+        <input type="text" class="input"
+               [ngClass]="(fullName.hasError('required') || fullName.hasError('minlength')|| fullName.hasError('maxlength')) && (fullName.touched || fullName.dirty)?'error-border':null"
+               placeholder="Enter Your Name" formControlName="fullName">
+        <div class="alert alert-danger error"
+             *ngIf="fullName.hasError('required') && (fullName.touched || fullName.dirty)">Username cannot be empty
+        </div>
+        <div class="alert alert-danger error"
+             *ngIf="fullName.hasError('maxlength') && (fullName.touched || fullName.dirty)">Username cannot be longer
+          than 50 characters
+        </div>
+        <div class="alert alert-danger error"
+             *ngIf="fullName.hasError('minlength') && (fullName.touched || fullName.dirty)">Username must be longer than
+          4 characters
+        </div>
       </div>
 
-      <button class="button">Register</button>
+      <div class="form-group">
+        <input type="email"
+               [ngClass]="(email.hasError('required') || email.hasError('email') || email.hasError('userExisting') || email.hasError('minlength')) && (email.touched || email.dirty)?'error-border':null"
+               class="input" placeholder="Enter Your Email" formControlName="email">
+        <div class="alert alert-danger error"
+             *ngIf="email.hasError('required') && (email.touched || email.dirty)">Email cannot be empty
+        </div>
+        <div class="alert alert-danger error"
+             *ngIf="email.hasError('email') && (email.touched || email.dirty)">Email is invalid
+        </div>
+        <div class="alert alert-danger error" *ngIf="email.hasError('userExisting') && (email.touched || email.dirty)">
+          User is existing
+        </div>
+        <div class="alert alert-danger error"
+             *ngIf="(email.hasError('minlength') && !email.hasError('email')) && (email.touched || email.dirty)">Email
+          must be longer than 6 characters
+        </div>
+      </div>
+
+      <div class="form-group" formGroupName="passwordGroup">
+        <div class="form-group">
+          <input type="password"
+                 [ngClass]="(password.hasError('required') || password.hasError('maxlength') ||
+                 password.hasError('minlength') || passwordGroup.hasError('identityPassword')) && (password.touched || password.dirty)?'error-border':null"
+                 class="input" placeholder="Password" formControlName="password">
+          <div class="alert alert-danger error"
+               *ngIf="password.hasError('required') && (password.touched || password.dirty)">Password cannot be empty
+          </div>
+          <div class="alert alert-danger error"
+               *ngIf="password.hasError('maxlength') && (password.touched || password.dirty)">Password cannot be longer
+            than 50 characters
+          </div>
+          <div class="alert alert-danger error"
+               *ngIf="password.hasError('minlength') && (password.touched || password.dirty)">Password must be longer
+            than 4 characters
+          </div>
+          <div class="alert alert-danger error"
+               *ngIf="(passwordGroup.hasError('identityPassword') && !password.hasError('minlength'))
+               && ((password.touched || password.dirty) && (confirmPassword.dirty || confirmPassword.touched))">Password
+            cannot matches
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="password"
+                 [ngClass]="(confirmPassword.hasError('required') || confirmPassword.hasError('maxlength') ||
+                 confirmPassword.hasError('minlength') || passwordGroup.hasError('identityPassword')) && (confirmPassword.touched || confirmPassword.dirty)?'error-border':null"
+                 class="input" placeholder="Confirm Password" formControlName="confirmPassword">
+          <div class="alert alert-danger error"
+               *ngIf="confirmPassword.hasError('required') && (confirmPassword.touched || confirmPassword.dirty)">
+            Confirm password cannot be empty
+          </div>
+          <div class="alert alert-danger error"
+               *ngIf="confirmPassword.hasError('minlength') && (confirmPassword.touched || confirmPassword.dirty)">
+            Confirm password must be longer
+            than 4 characters
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <div class="form-group w-100 mr-4">
+          <input type="text" class="input"
+                 [ngClass]="(phoneNumber.hasError('required') || phoneNumber.hasError('pattern')) && (phoneNumber.touched || phoneNumber.dirty)?'error-border':null"
+                 placeholder="Phone Number" formControlName="phoneNumber">
+          <div class="alert alert-danger error"
+               *ngIf="phoneNumber.hasError('required') && (phoneNumber.touched || phoneNumber.dirty)">Phone number
+            cannot be empty
+          </div>
+
+          <div class="alert alert-danger error"
+               *ngIf="phoneNumber.hasError('pattern') && (phoneNumber.touched || phoneNumber.dirty)">Phone number
+            is invalid
+          </div>
+        </div>
+
+        <div class="form-group w-100">
+          <select class="input" formControlName="province">
+            <option *ngFor="let province of provinces"
+                    [value]="province.id">{{province.name}}</option>
+          </select>
+        </div>
+      </div>
+      <button class="button"
+              [disabled]="formRegister.invalid">Register
+      </button>
 
       <span>Already have an account? <a routerLink="/customer/login">Login Now</a></span>
     </form>
   </div>
 </div>
-
 <app-footer></app-footer>
