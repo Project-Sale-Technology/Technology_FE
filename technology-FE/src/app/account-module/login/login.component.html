@@ -5,7 +5,7 @@
 
 <div class="login__page-container section">
   <div class="container">
-    <form class="login__page-form">
+    <form class="login__page-form" [formGroup]="formLogin" (ngSubmit)="handleLogin()">
       <div class="header">
         <h3 class="title">Login Now</h3>
         <span>You can login using your social media account or email address.</span>
@@ -34,18 +34,41 @@
         </div>
       </div>
 
+      <div *ngIf="alertMessageError" class="alert alert-danger login-error__alert">
+        <span>Account not active . Please try again later</span>
+      </div>
+
       <div class="alt-option">
         <span>Or</span>
       </div>
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" id="email" class="input">
+        <input type="text" id="email" class="input"
+               [ngClass]="(email.hasError('required') || email.hasError('pattern'))&& (email.dirty || email.touched)?'error-border':null"
+               formControlName="email">
+        <div class="alert alert-danger error-alert" *ngIf="email.hasError('pattern') && (email.dirty || email.touched)">
+          Email is invalid
+        </div>
+        <div class="alert alert-danger error-alert"
+             *ngIf="email.hasError('required') && (email.dirty || email.touched)">Email not be empty
+        </div>
+        <div class="alert alert-danger error-alert"
+             *ngIf="(email.hasError('minlength') && !email.hasError('pattern')) && (email.dirty || email.touched)">Email must be longer than 17 characters
+        </div>
       </div>
 
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" class="input">
+        <input type="password" id="password" class="input"
+               [ngClass]="(password.hasError('required') || password.hasError('minlength'))&& (password.dirty || password.touched)?'error-border':null"
+               formControlName="password">
+        <div class="alert alert-danger error-alert"
+             *ngIf="password.hasError('minlength') && (email.dirty || email.touched)">Password must be longer than 4 characters
+        </div>
+        <div class="alert alert-danger error-alert"
+             *ngIf="password.hasError('required') && (password.dirty || password.touched)">Password cannot be empty
+        </div>
       </div>
 
       <div class="d-flex flex-wrap justify-content-between mt-5">
@@ -57,7 +80,7 @@
         <a class="forgot">Forgot Password?</a>
       </div>
 
-      <button class="button">Login</button>
+      <button class="button" [disabled]="formLogin.invalid">Login</button>
 
       <p class="no-account">Don't have an account? <a routerLink="/customer/register">Register here</a></p>
     </form>
