@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../service/account.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {AuthenticationService} from "./service/authentication.service";
+import {first} from "rxjs/operators";
 
 @Component({
   selector: 'app-login',
@@ -17,7 +19,8 @@ export class LoginComponent implements OnInit {
   /* Initialize form login */
   formLogin: FormGroup;
 
-  constructor(private fb: FormBuilder , private accountService: AccountService , private router: Router) {
+  constructor(private fb: FormBuilder, private accountService: AccountService, private router: Router
+    , private authenticationService: AuthenticationService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -25,21 +28,20 @@ export class LoginComponent implements OnInit {
     this.formLogin = this.fb.group({
       email: ['', Validators.compose([Validators.required,
         Validators.minLength(17), Validators.pattern("^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$")])],
-      password: ['' , Validators.compose([Validators.required , Validators.minLength(4)])]
+      password: ['', Validators.compose([Validators.required, Validators.minLength(4)])]
     })
   }
 
   handleLogin() {
-    const email = this.email.value;
-    const password = this.password.value;
-    this.accountService.handleLogin(email , password).subscribe(data=> {
-      if(data == null) {
-        this.formLogin.reset();
-        this.alertMessageError = true;
-      } else {
-        this.router.navigateByUrl("");
-      }
-    })
+    this.authenticationService.handleLogin(this.formLogin.value)
+      .pipe(first())
+      .subscribe({
+        next: () => {
+          // get return url from query parameters or default to home page
+          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+          this.router.navigateByUrl(returnUrl);
+        }
+      })
   }
 
   /* Getter  for form login */
