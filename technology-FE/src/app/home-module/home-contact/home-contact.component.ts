@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeContactComponent implements OnInit {
 
+  /* set name for current page */
+  currentPage = 'Contact Us'
+
   constructor() { }
 
   ngOnInit(): void {

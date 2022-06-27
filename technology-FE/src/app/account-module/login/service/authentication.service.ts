@@ -12,7 +12,9 @@ const API_URL = "http://localhost:8080/account";
 })
 export class AuthenticationService {
   private userSubject: BehaviorSubject<User>;
-  private user: Observable<User>;
+
+  /*Set user to get after login */
+  public user: Observable<User>;
 
   constructor(private router: Router, private httpClient: HttpClient) {
     this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
@@ -31,7 +33,7 @@ export class AuthenticationService {
         localStorage.setItem('user', JSON.stringify(user));
         this.userSubject.next(user);
         return user;
-      }))
+      }));
   }
 
   /* Logout */
@@ -39,6 +41,5 @@ export class AuthenticationService {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
     this.userSubject.next(null);
-    this.router.navigate(['/customer/login']);
   }
 }

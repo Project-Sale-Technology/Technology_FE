@@ -1,5 +1,1133 @@
 <app-header-top></app-header-top>
-<app-header-middle></app-header-middle>
+<app-header-middle (productSearch)="getValueHeaderSearch($event)"></app-header-middle>
 <app-header-navbar></app-header-navbar>
-<app-header-footer></app-header-footer>
+
+<div *ngIf="productsSearch == null" class="home__container">
+  <!-- Introduction -->
+  <div class="home-introduction">
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <div class="home__slide-introduction">
+            <div id="homeSlideIntroduction" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#homeSlideIntroduction" data-slide-to="0" class="active"></li>
+                <li data-target="#homeSlideIntroduction" data-slide-to="1"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="home__slide-introduction-img">
+                    <img class="d-block w-100" src="./assets/img/home/slide/slider-bg1.jpg" alt="First slide">
+
+                    <div class="home__slide-introduction__content">
+                      <div class="info">
+                        <span>No restocking fee ($35 savings)</span>
+                        <h2>M75 Sport Watch</h2>
+                      </div>
+                      <p class="desc">
+                        Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore dolore
+                        magna aliqua.
+                      </p>
+
+                      <div class="price">
+                        <span>Now Only: </span>
+                        <h3>$320.99</h3>
+                      </div>
+                      <a class="button">Show Now</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="home__slide-introduction-img">
+                    <img class="d-block w-100" src="./assets/img/home/slide/slider-bg2.jpg" alt="First slide">
+
+                    <div class="home__slide-introduction__content">
+                      <div class="info">
+                        <span>Big Sale Offer</span>
+                        <h2>Get the Best Deal on CCTV Camera</h2>
+                      </div>
+
+                      <p class="desc">
+                        Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore dolore
+                        magna aliqua.
+                      </p>
+
+                      <div class="price">
+                        <span>Combo Only: </span>
+                        <h3>$590.00</h3>
+                      </div>
+
+                      <a class="button">Show Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="home__slide-introduction-node next" href="#homeSlideIntroduction" role="button"
+                   data-slide="next">
+                <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+              </div>
+
+              <div class="home__slide-introduction-node prev" href="#homeSlideIntroduction" role="button"
+                   data-slide="prev">
+                <i class="fa-solid fa-angle-left" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="home__slide-introduction-right-area">
+            <div class="top position-relative">
+              <img src="./assets/img/home/slide/slider-bnr.jpg">
+
+              <div class="content">
+                <span>New line required</span>
+                <h2>iPhone 12 Pro Max</h2>
+                <p class="price">$259.99</p>
+              </div>
+            </div>
+
+            <div class="bottom position-relative">
+              <img src="./assets/img/home/slide/small-banner-bg.png">
+
+              <div class="content">
+                <h2>Weekly Sale!</h2>
+                <span>Saving up to 50% off all online store items this week.</span>
+                <a class="button">Show Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Categories -->
+  <div class="featured-categories section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured Categories</h2>
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form.
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          <div class="single-category">
+            <h3 class="name">TV & Audio</h3>
+
+            <ul class="single-category__list">
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+            </ul>
+
+            <img src="../../../assets/img/home/featured-categories/featured-item-1.png" alt="">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="single-category">
+            <h3 class="name">TV & Audio</h3>
+
+            <ul class="single-category__list">
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+            </ul>
+
+            <img src="../../../assets/img/home/featured-categories/featured-item-1.png" alt="">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="single-category">
+            <h3 class="name">TV & Audio</h3>
+
+            <ul class="single-category__list">
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+            </ul>
+
+            <img src="../../../assets/img/home/featured-categories/featured-item-1.png" alt="">
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="single-category">
+            <h3 class="name">TV & Audio</h3>
+
+            <ul class="single-category__list">
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+            </ul>
+
+            <img src="../../../assets/img/home/featured-categories/featured-item-1.png" alt="">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="single-category">
+            <h3 class="name">TV & Audio</h3>
+
+            <ul class="single-category__list">
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+            </ul>
+
+            <img src="../../../assets/img/home/featured-categories/featured-item-1.png" alt="">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="single-category">
+            <h3 class="name">TV & Audio</h3>
+
+            <ul class="single-category__list">
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+
+              <li>
+                <a>Smart Television</a>
+              </li>
+            </ul>
+
+            <img src="../../../assets/img/home/featured-categories/featured-item-1.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trending Product -->
+  <div class="trending-product section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Trending Product</h2>
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form.</p>
+      </div>
+
+      <div class="row">
+        <div *ngFor="let product of products" class="col-3">
+          <div class="single-product">
+            <div class="single-product__img-group">
+              <img class="single-product__img" src="./assets/img/header/product-1.jpg" alt="">
+
+              <form class="single-product__cart">
+                <button class="button">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  Add To Cart
+                </button>
+              </form>
+            </div>
+
+            <div class="info">
+              <span class="category">{{product.category.name}}</span>
+              <a class="name">{{product.name}}</a>
+
+              <ul class="feedback">
+                <li>
+                  <i class="fa-solid fa-star"></i>
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-star"></i>
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-star"></i>
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-star"></i>
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-star"></i>
+                </li>
+
+                <li>
+                  <span>4.0 Review(s)</span>
+                </li>
+              </ul>
+
+              <p class="price">$199.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sale Ads -->
+  <div class="sale-ads section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Sale Product</h2>
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form.</p>
+      </div>
+
+      <ul class="navbar-tabs">
+        <li (click)="clickSale(0)" [ngClass]="clickedSale == 0 ?'active':null">Latest Ads</li>
+        <li (click)="clickSale(1)" [ngClass]="clickedSale == 1 ?'active':null">Popular Ads</li>
+        <li (click)="clickSale(2)" [ngClass]="clickedSale == 2 ?'active':null">Random Ads</li>
+      </ul>
+
+      <div *ngIf="clickedSale == 0" class="show-ads">
+        <div class="row">
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="clickedSale == 1" class="show-ads">
+        <div class="row">
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-3.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="clickedSale == 2" class="show-ads">
+        <div class="row">
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="single-product">
+              <div class="single-product__img-group">
+                <img class="single-product__img" src="./assets/img/header/item-1.jpg" alt="">
+
+                <span class="sale">Sale</span>
+                <form class="single-product__cart">
+                  <button class="button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add To Cart
+                  </button>
+                </form>
+              </div>
+
+              <div class="info">
+                <span class="category">Watches</span>
+                <a class="name">Xiao Mi Band 5</a>
+
+                <ul class="feedback">
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-star"></i>
+                  </li>
+
+                  <li>
+                    <span>4.0 Review(s)</span>
+                  </li>
+                </ul>
+
+                <p class="price">$199.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popular Brands -->
+  <div class="popular-brands section">
+    <div class="section-title">
+      <h2>Popular Brands</h2>
+    </div>
+    <div class="container">
+      <div class="popular-brands__slide">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-2">
+                  <div class="popular-brands__img-group">
+                    <img src="./assets/img/home/popular-brands/01.png" alt="">
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="popular-brands__img-group">
+                    <img src="./assets/img/home/popular-brands/02.png" alt="">
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="popular-brands__img-group">
+                    <img src="./assets/img/home/popular-brands/03.png" alt="">
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="popular-brands__img-group">
+                    <img src="./assets/img/home/popular-brands/04.png" alt="">
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="popular-brands__img-group">
+                    <img src="./assets/img/home/popular-brands/05.png" alt="">
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="popular-brands__img-group">
+                    <img src="./assets/img/home/popular-brands/06.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-2">
+                  <div class="popular-brands__img-group">
+                    <img src="./assets/img/home/popular-brands/06.png" alt="">
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="popular-brands__img-group">
+                    <img src="./assets/img/home/popular-brands/05.png" alt="">
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="popular-brands__img-group">
+                    <img src="./assets/img/home/popular-brands/04.png" alt="">
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="popular-brands__img-group">
+                    <img src="./assets/img/home/popular-brands/03.png" alt="">
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="popular-brands__img-group">
+                    <img src="./assets/img/home/popular-brands/02.png" alt="">
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="popular-brands__img-group">
+                    <img src="./assets/img/home/popular-brands/01.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shipping info -->
+  <div class="shipping-info">
+    <div class="container">
+      <div class="row">
+        <ul class="shipping-info__list">
+          <li>
+            <i class="fa-solid fa-car"></i>
+
+            <div class="media-body">
+              <h4>Free Shipping</h4>
+              <span>On order over $99</span>
+            </div>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-file-invoice"></i>
+
+            <div class="media-body">
+              <h4>24/7 Support.</h4>
+              <span>Live Chat Or Call.</span>
+            </div>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-credit-card"></i>
+            <div class="media-body">
+              <h4>Online Payment.</h4>
+              <span>Secure Payment Services.</span>
+            </div>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+            <div class="media-body">
+              <h4>Easy Return.</h4>
+              <span>Hassle Free Shopping.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div *ngIf="productsSearch" class="home__search-container">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div *ngFor="let product of productsSearch| paginate: {itemsPerPage: 5, currentPage: p}" class="col-3">-->
+<!--        <div class="single-product">-->
+<!--          <div class="single-product__img-group">-->
+<!--            <img class="single-product__img" src="./assets/img/header/product-1.jpg" alt="">-->
+
+<!--            <form class="single-product__cart">-->
+<!--              <button class="button">-->
+<!--                <i class="fa-solid fa-cart-shopping"></i>-->
+<!--                Add To Cart-->
+<!--              </button>-->
+<!--            </form>-->
+<!--          </div>-->
+
+<!--          <div class="info">-->
+<!--            <span class="category">{{product.category.name}}</span>-->
+<!--            <a class="name">{{product.name}}</a>-->
+
+<!--            <ul class="feedback">-->
+<!--              <li>-->
+<!--                <i class="fa-solid fa-star"></i>-->
+<!--              </li>-->
+
+<!--              <li>-->
+<!--                <i class="fa-solid fa-star"></i>-->
+<!--              </li>-->
+
+<!--              <li>-->
+<!--                <i class="fa-solid fa-star"></i>-->
+<!--              </li>-->
+
+<!--              <li>-->
+<!--                <i class="fa-solid fa-star"></i>-->
+<!--              </li>-->
+
+<!--              <li>-->
+<!--                <i class="fa-solid fa-star"></i>-->
+<!--              </li>-->
+
+<!--              <li>-->
+<!--                <span>4.0 Review(s)</span>-->
+<!--              </li>-->
+<!--            </ul>-->
+
+<!--            <p class="price">$199.00</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <ul class="pagination">-->
+<!--        <li (click)="prevPage()" class="node next" *ngIf="currentPage != 0">-->
+<!--          <i class="ti-angle-left"></i>-->
+<!--        </li>-->
+
+<!--        <li class="node" (click)="redirectPagination(tg+1)"-->
+<!--            *ngFor="let tg of totalPageArray" [ngClass]="activedButton==tg+1?'active':null">{{tg+1}}</li>-->
+
+<!--        <li (click)="nextPage()" class="node prev" *ngIf="this.activedButton != this.totalPageArray.length">-->
+<!--          <i class="ti-angle-right"></i>-->
+<!--        </li>-->
+<!--        <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 <app-footer></app-footer>
