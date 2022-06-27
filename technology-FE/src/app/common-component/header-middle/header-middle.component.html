@@ -11,14 +11,12 @@
 
       <div class="col-6">
         <div class="middle-area">
-          <form class="middle-area__form">
-            <select class="input">
-              <option>Option</option>
-              <option>Option</option>
-              <option>Option</option>
+          <form class="middle-area__form" [formGroup]="headerFormSearch" (ngSubmit)="searchProduct()">
+            <select class="input" formControlName="category">
+              <option *ngFor="let cate of categories" [value]="cate.id">{{cate.name}}</option>
             </select>
 
-            <input type="text" class="input" placeholder="Search">
+            <input type="text" class="input" placeholder="Search" formControlName="formInput">
             <button class="button">
               <i class="ti-search"></i>
             </button>
@@ -44,11 +42,11 @@
             </div>
 
             <div class="navbar-cart__group has--cart">
-              <i class="circle ti-shopping-cart"></i>
+              <i class="circle fa-solid fa-cart-shopping"></i>
 
               <span class="quantity">3</span>
 
-              <form class="has-cart">
+              <div class="has-cart">
                 <div class="header">
                   <span>2 Items</span>
                   <span>View Cart</span>
@@ -92,7 +90,7 @@
 
                   <button class="button">Checkout</button>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
