@@ -205,4 +205,9 @@ input.error-border {
   color: var(--primary-color-blue);
 }
 
+.alert {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
 
