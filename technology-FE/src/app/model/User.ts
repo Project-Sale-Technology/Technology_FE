@@ -1,6 +1,7 @@
 import {Province} from "./Province";
 import {Order} from "./Order";
 import {Feedback} from "./Feedback";
+import {Role} from "./Role";
 
 export class User {
   id: number;
@@ -13,4 +14,6 @@ password: string;
 province: Province;
 order: Order;
 feedback: Feedback;
+role: Role;
+token?: string;
 }
