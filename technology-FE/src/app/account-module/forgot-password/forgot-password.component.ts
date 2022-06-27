@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotPasswordComponent implements OnInit {
 
+  /* Set name for current page*/
+  currentPage = 'Forgot Password';
+
   constructor() { }
 
   ngOnInit(): void {
