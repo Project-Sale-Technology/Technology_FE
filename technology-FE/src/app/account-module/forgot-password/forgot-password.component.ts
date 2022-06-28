@@ -41,6 +41,7 @@ export class ForgotPasswordComponent implements OnInit {
       window.localStorage.setItem('reset_token' , token);
       this.checkSentToMail = true;
     } , error => {
+      console.log(error);
       this.checkSentToMail = false;
     })
   }
