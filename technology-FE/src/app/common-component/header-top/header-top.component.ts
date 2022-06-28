@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AuthenticationService} from "../../account-module/login/service/authentication.service";
 import {User} from "../../model/User";
 import {AccountService} from "../../account-module/service/account.service";
@@ -13,6 +13,8 @@ export class HeaderTopComponent implements OnInit {
   /* Get user */
   user: User;
 
+  @Input() checkToastLogin: boolean = false;
+
   constructor(private authenticationService: AuthenticationService ,
               private accountService: AccountService) {
     this.authenticationService.user.subscribe(data => {
@@ -25,5 +27,12 @@ export class HeaderTopComponent implements OnInit {
 
   logout() {
     this.authenticationService.logout();
+  }
+
+  /* Show toast login */
+  showToast() {
+    if(this.checkToastLogin) {
+      // document.getElementsByClassName('toast-alert').classList.add('')
+    }
   }
 }

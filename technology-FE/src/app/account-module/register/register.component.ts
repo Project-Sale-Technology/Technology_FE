@@ -1,8 +1,8 @@
-import {Component, OnInit, Pipe} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, Pipe} from '@angular/core';
 import {Province} from "../../model/Province";
 import {AccountService} from "../service/account.service";
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {checkUserExisting} from "../validate/ValidateCheckUserExisting";
 import {UserRegisterDTO} from "../../dto/UserRegisterDTO";
 
@@ -24,8 +24,11 @@ export class RegisterComponent implements OnInit {
   userSaved: UserRegisterDTO;
   provinceDefault = 1;
 
+  /* Check toast for register successfully */
+  checkToastRegister: boolean;
+
   constructor(private accountService: AccountService, private fb: FormBuilder
-    , private router: Router) {
+    , private router: Router , private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -62,6 +65,7 @@ export class RegisterComponent implements OnInit {
     this.userSaved.password = password;
 
     this.accountService.handleRegister(this.userSaved).subscribe(() => {
+      this.checkToastRegister = true;
       this.router.navigateByUrl("/customer/login");
     })
   }
