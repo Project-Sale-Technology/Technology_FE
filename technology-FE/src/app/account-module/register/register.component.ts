@@ -1,10 +1,10 @@
-import {Component, EventEmitter, OnInit, Output, Pipe} from '@angular/core';
-import {Province} from "../../model/Province";
-import {AccountService} from "../service/account.service";
-import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ActivatedRoute, Router} from "@angular/router";
-import {checkUserExisting} from "../validate/ValidateCheckUserExisting";
-import {UserRegisterDTO} from "../../dto/UserRegisterDTO";
+import {Component, OnInit, Pipe} from '@angular/core';
+import {Province} from '../../model/Province';
+import {AccountService} from '../service/account.service';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
+import {checkUserExisting} from '../validate/ValidateCheckUserExisting';
+import {UserRegisterDTO} from '../../dto/UserRegisterDTO';
 
 @Component({
   selector: 'app-register',
@@ -24,11 +24,8 @@ export class RegisterComponent implements OnInit {
   userSaved: UserRegisterDTO;
   provinceDefault = 1;
 
-  /* Check toast for register successfully */
-  checkToastRegister: boolean;
-
   constructor(private accountService: AccountService, private fb: FormBuilder
-    , private router: Router , private route: ActivatedRoute) {
+    ,         private router: Router , private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -46,14 +43,14 @@ export class RegisterComponent implements OnInit {
         confirmPassword: ['', Validators.compose([Validators.required, Validators.minLength(4)])]
       }, {validators: identityConfirmPassword}),
       email: ['',
-        Validators.compose([Validators.required, Validators.pattern("^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$"), Validators.minLength(17)]), checkUserExisting(this.accountService)],
+        Validators.compose([Validators.required, Validators.pattern('^\\w+([-+.\']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$'), Validators.minLength(17)]), checkUserExisting(this.accountService)],
       phoneNumber: ['',
         Validators.compose([Validators.required, Validators.pattern(/^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/)])],
       province: ['']
     });
 
     /* Set default value for form */
-    this.formRegister.get('province').setValue(this.provinceDefault, {onlySelf: true})
+    this.formRegister.get('province').setValue(this.provinceDefault, {onlySelf: true});
   }
 
   handleRegister() {
@@ -65,9 +62,8 @@ export class RegisterComponent implements OnInit {
     this.userSaved.password = password;
 
     this.accountService.handleRegister(this.userSaved).subscribe(() => {
-      this.checkToastRegister = true;
-      this.router.navigateByUrl("/customer/login");
-    })
+      this.router.navigateByUrl('/customer/login');
+    });
   }
 
   /* Getter each instance form */
