@@ -36,6 +36,10 @@ const routes: Routes = [
     path: "admin",
     loadChildren: () => import('./employee-module/employee-module.module').then(module => module.EmployeeModuleModule)
   },
+  {
+    path: "error" ,
+    loadChildren: () => import('./error-page-module/error-page-module.module').then(module=> module.ErrorPageModuleModule)
+  }
 ];
 
 @NgModule({

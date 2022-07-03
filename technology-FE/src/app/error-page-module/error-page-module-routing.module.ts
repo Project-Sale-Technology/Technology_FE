@@ -4,7 +4,7 @@ import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 
 const routes: Routes = [
-  {path: "/grid-shop/404" , component: PageNotFoundComponent}
+  {path: "404" , component: PageNotFoundComponent}
 ];
 
 @NgModule({

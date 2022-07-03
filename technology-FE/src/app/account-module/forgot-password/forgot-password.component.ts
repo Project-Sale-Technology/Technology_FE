@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ForgotPasswordService} from "./service/forgot-password.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {checkUserExisting} from "../validate/ValidateCheckUserExisting";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-forgot-password',
@@ -21,7 +21,7 @@ export class ForgotPasswordComponent implements OnInit {
   checkSentToMail: boolean;
 
   constructor(private forgotPasswordService: ForgotPasswordService
-    , private fb: FormBuilder) {
+    , private fb: FormBuilder ,private cookieService: CookieService) {
   }
 
   ngOnInit(): void {
@@ -34,10 +34,15 @@ export class ForgotPasswordComponent implements OnInit {
 
   sendRequest() {
     const email = this.email.value;
+    const dateNow = new Date();
+    dateNow.setMinutes(dateNow.getMinutes() + 10); // 10 minutes
+
     this.forgotPasswordService.processPassword(email).subscribe(token => {
       this.token = token;
-      /* Set token for reset password */
-      window.localStorage.setItem('reset_token' , token);
+
+      /* Set cookie for token with 10 minutes */
+      this.cookieService.set('tokenPassword' , token , dateNow);
+
       this.checkSentToMail = true;
     } , error => {
       this.checkSentToMail = false;
