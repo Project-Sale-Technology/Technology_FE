@@ -34,16 +34,14 @@ export class ForgotPasswordComponent implements OnInit {
 
   sendRequest() {
     const email = this.email.value;
-    console.log(email);
     this.forgotPasswordService.processPassword(email).subscribe(token => {
       this.token = token;
       /* Set token for reset password */
       window.localStorage.setItem('reset_token' , token);
       this.checkSentToMail = true;
     } , error => {
-      console.log(error);
       this.checkSentToMail = false;
-    })
+    });
   }
 
   /* Getter variable for form */

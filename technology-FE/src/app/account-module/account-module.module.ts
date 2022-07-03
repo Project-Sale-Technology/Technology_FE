@@ -9,10 +9,11 @@ import {RegisterComponent} from './register/register.component';
 import {CommonComponentModule} from "../common-component/common-component.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, ChangePasswordComponent, ForgotPasswordComponent, RegisterComponent],
+  declarations: [LoginComponent, ChangePasswordComponent, ForgotPasswordComponent, RegisterComponent, ResetPasswordComponent],
   imports: [
     CommonModule,
     AccountModuleRoutingModule,
