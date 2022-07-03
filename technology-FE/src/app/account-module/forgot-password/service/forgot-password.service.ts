@@ -10,7 +10,7 @@ const API_URL = "http://localhost:8080/account";
 })
 export class ForgotPasswordService {
   /* Process forget password */
-  processPassword(email: string):Observable<any> {
+  processPassword(email: string): Observable<any> {
     return this.httpClient.post(`${API_URL}/forgot-password` ,email, {responseType: 'text'});
   }
 

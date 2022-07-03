@@ -39,8 +39,8 @@ export class RegisterComponent implements OnInit {
       fullName: ['',
         Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(50)])],
       passwordGroup: this.fb.group({
-        password: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-        confirmPassword: ['', Validators.compose([Validators.required, Validators.minLength(4)])]
+        password: ['', Validators.compose([Validators.required, Validators.minLength(4) , Validators.maxLength(50)])],
+        confirmPassword: ['', Validators.compose([Validators.required, Validators.minLength(4) , Validators.maxLength(50)])]
       }, {validators: identityConfirmPassword}),
       email: ['',
         Validators.compose([Validators.required, Validators.pattern('^\\w+([-+.\']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$'), Validators.minLength(17)]), checkUserExisting(this.accountService)],
