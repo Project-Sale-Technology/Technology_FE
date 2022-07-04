@@ -13,7 +13,7 @@ import {CookieService} from "ngx-cookie-service";
 export class ResetPasswordComponent implements OnInit {
 
   token: string;
-  tokenCheck: any;
+  tokenCheck: boolean = true;
 
   /* Get token from link to check existing */
   tokenLink: string;
@@ -36,13 +36,13 @@ export class ResetPasswordComponent implements OnInit {
     /* Check token password existing to redirect 404 */
     this.tokenCheckExisting = this.checkTokenExisting();
 
-    if(this.tokenCheckExisting) {
+    if (this.tokenCheckExisting) {
       this.formResetPassword = this.fb.group({
         passwordGroup: this.fb.group({
-          password: ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(50)]) , checkPwdUsed(this.resetPasswordService)],
+          password: ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(50)]), checkPwdUsed(this.resetPasswordService, this.cookieService.get('tokenPassword'))],
           confirmPassword: ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(50)])]
         }, {validators: identityConfirmPassword}),
-      })
+      });
     } else {
       this.router.navigate(['error/404']);
     }
@@ -53,24 +53,21 @@ export class ResetPasswordComponent implements OnInit {
     const password = this.password.value;
     const check = this.cookieService.get('tokenPassword');
 
-    if(check) {
-      this.tokenCheck = true;
-      this.resetPasswordService.handleResetPassword(this.token , password).subscribe(()=> {
-        this.router.navigate(['customer/login']);
-        /* Remove token */
-        this.cookieService.delete('tokenPassword');
+    this.resetPasswordService.handleResetPassword(check , password).subscribe(()=> {
+      this.router.navigate(['customer/login']);
+      /* Remove token */
+      this.cookieService.delete('tokenPassword');
 
-      } , error => {
-        console.log(error.message);
-      })
-    } else {
-      this.tokenCheck = false;
-    }
+    } , error => {
+      console.log(error.message);
+    })
   }
 
   /* Check exciting cookie token reset password */
   checkTokenExisting() {
     const token = this.cookieService.get('tokenPassword');
+    console.log(token);
+    console.log(this.tokenLink);
     if(token === this.tokenLink) {
      return true;
     } else {
