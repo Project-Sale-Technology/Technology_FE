@@ -5,6 +5,7 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 import {ActivatedRoute, Router} from '@angular/router';
 import {checkUserExisting} from '../validate/ValidateCheckUserExisting';
 import {UserRegisterDTO} from '../../dto/UserRegisterDTO';
+import {AuthService} from "../../home-module/chat-app/service/auth.service";
 
 @Component({
   selector: 'app-register',
@@ -25,7 +26,7 @@ export class RegisterComponent implements OnInit {
   provinceDefault = 1;
 
   constructor(private accountService: AccountService, private fb: FormBuilder
-    ,         private router: Router , private route: ActivatedRoute) {
+    ,         private router: Router , private route: ActivatedRoute , private authService: AuthService) {
   }
 
   ngOnInit(): void {
@@ -36,6 +37,7 @@ export class RegisterComponent implements OnInit {
 
     /* Set variable and validate for register form */
     this.formRegister = this.fb.group({
+      id: [''] ,
       fullName: ['',
         Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(50)])],
       passwordGroup: this.fb.group({
@@ -61,7 +63,10 @@ export class RegisterComponent implements OnInit {
     this.userSaved.confirmPassword = confirmPassword;
     this.userSaved.password = password;
 
-    this.accountService.handleRegister(this.userSaved).subscribe(() => {
+    this.accountService.handleRegister(this.userSaved).subscribe(data => {
+      /* Set user for firebase */
+      this.authService.setUserData(data.id , data.fullName , data.email , false);
+
       this.router.navigateByUrl('/customer/login');
     });
   }
