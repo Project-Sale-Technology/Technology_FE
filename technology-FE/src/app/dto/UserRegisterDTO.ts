@@ -1,7 +1,7 @@
 import {Province} from "../model/Province";
 
 export class UserRegisterDTO {
-  id?: any;
+  id: any;
   fullName: string;
   password: string;
   confirmPassword: string;

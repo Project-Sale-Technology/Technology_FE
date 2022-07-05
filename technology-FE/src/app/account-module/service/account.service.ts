@@ -27,7 +27,5 @@ export class AccountService {
     return this.httpClient.get<User>(`${API_URL}/check-user-existing/e=${email}`);
   }
 
-  /* Get user */
-
   constructor(private httpClient: HttpClient) { }
 }

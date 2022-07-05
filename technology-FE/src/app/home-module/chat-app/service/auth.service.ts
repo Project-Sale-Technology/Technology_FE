@@ -32,13 +32,13 @@ export class AuthService {
   }
 
   /* Set user to firebase */
-  setUserData(uId: any , username: string , email: string , status: boolean) {
+  setUserData(uId: any , fullName: string , email: string , status: boolean) {
     /*Create path */
     const path = `${BASE_PATH}/${uId}`;
 
-    const data ={
+    const data = {
       email: email,
-      username: username ,
+      fullName: fullName ,
       status: status
     }
 

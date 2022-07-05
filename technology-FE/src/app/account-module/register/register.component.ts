@@ -37,7 +37,6 @@ export class RegisterComponent implements OnInit {
 
     /* Set variable and validate for register form */
     this.formRegister = this.fb.group({
-      id: [''] ,
       fullName: ['',
         Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(50)])],
       passwordGroup: this.fb.group({
@@ -65,7 +64,7 @@ export class RegisterComponent implements OnInit {
 
     this.accountService.handleRegister(this.userSaved).subscribe(data => {
       /* Set user for firebase */
-      this.authService.setUserData(data.id , data.fullName , data.email , false);
+      this.authService.setUserData(data.id,data.fullName , data.email , false);
 
       this.router.navigateByUrl('/customer/login');
     });

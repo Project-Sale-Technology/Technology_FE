@@ -33,6 +33,7 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   sendRequest() {
+    console.log('hi')
     const email = this.email.value;
     const dateNow = new Date();
     dateNow.setMinutes(dateNow.getMinutes() + 10); // 10 minutes
