@@ -1,3 +1,15 @@
+<!-- Toast -->
+<!--<div class="toast-alert__container" *ngIf="checkToastLogin">-->
+<!--  <div id="toastAlert" class="toast-alert">-->
+<!--    <i class="circle icon-alert fa-solid fa-check"></i>-->
+<!--    <div class="message">-->
+<!--      <span class="main-message">This is success message</span>-->
+<!--      <span class="sub-message">This is success message</span>-->
+<!--    </div>-->
+<!--    <div class="count-down"></div>-->
+<!--  </div>-->
+<!--</div>-->
+
 <header class="header__top-home">
   <div class="container h-100">
     <div class="navbar">
@@ -17,17 +29,22 @@
 
       <div class="header__top-home-right-area">
         <ul>
-          <li>
+          <li *ngIf="user" class="border-right">
             <i class="fa-solid fa-user"></i>
-            <span class="name">Anh Tuấn</span>
+            <span class="name">{{user.name}}</span>
           </li>
 
-          <li>
+          <li *ngIf="!user"  class="border-right">
             <a routerLink="/customer/login">Sign in</a>
           </li>
 
-          <li>
+          <li *ngIf="!user">
             <a routerLink="/customer/register">Register</a>
+          </li>
+
+          <li (click)="logout()" *ngIf="user">
+            <span>Sign out</span>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
           </li>
         </ul>
       </div>

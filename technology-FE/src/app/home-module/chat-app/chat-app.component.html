@@ -1,0 +1,100 @@
+<div class="screen-chat__container">
+  <div id="chatIcon" (click)="showChat()" class="chat-icon hidden-chat">
+    <i *ngIf="!showChatApp" class="chat-icon fa-solid fa-comments"></i>
+
+    <i *ngIf="showChatApp" class="close-icon fa-solid fa-x"></i>
+  </div>
+
+  <div *ngIf="showChatApp" class="screen-chat">
+    <div class="screen-chat__header-group">
+      <div class="screen-chat__header">
+        <div class="middle">
+          <h3 class="title">Welcome to LiveChat</h3>
+        </div>
+
+        <div class="footer">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+
+      <div class="screen-chat__admin">
+        <div class="avatar-group">
+          <img src="./assets/avatar.avif" alt="">
+
+          <div class="active"></div>
+        </div>
+
+        <div class="info">
+          <h3 class="name">Admin A0721I1</h3>
+          <span class="position">Support Consultant</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen-chat__middle-group">
+      <div class="info-user">
+        <div class="icon-user">
+          <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div class="info-user__group">
+          <span>Name: </span>
+          <p>{{userCurrently.name}}</p>
+        </div>
+
+        <div class="info-user__group">
+          <span>E-mail: </span>
+          <p>{{userCurrently.email}}</p>
+        </div>
+      </div>
+
+      <div class="info-chat">
+        <div class="info-chat__item">
+          <div class="img-group">
+            <img src="./assets/avatar.avif" alt="">
+          </div>
+
+          <div class="info-chat__item-right-area">
+            <span class="name">Admin </span>
+            <span class="time">{{userCurrently.loginTime | date :'dd/MM/yyyy'}}</span>
+
+            <div class="text-chat">
+              <p>Hello . How may I help you?</p>
+            </div>
+          </div>
+        </div>
+
+        <div *ngFor="let message of messagesSent | async">
+          <app-message [chatMessage]="message"></app-message>
+        </div>
+      </div>
+    </div>
+
+    <form [formGroup]="formChat" (ngSubmit)="sendMessage()" class="chat-bar">
+      <div [style.visibility]="showNotiError ? 'visible' : 'hidden'"
+           [style.opacity]="showNotiError?'1':'0'" id="notiError" class="alert__error-notification error-alert">
+        <span>Don't let it blank before sending a message</span>
+      </div>
+
+      <input class="message" type="text" placeholder="Write a message" formControlName="message">
+
+      <div class="chat-bar__function">
+        <div class="attachment-group">
+          <label for="attachment-input" class="attachment">
+            <i class="fa-solid fa-link"></i>
+          </label>
+
+          <input type="file" id="attachment-input" formControlName="fileUpload">
+        </div>
+
+        <button type="submit" class="send-group">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </form>
+
+    <div class="screen-chat__footer-group">
+      <p>Powered by <strong>A0721I1</strong></p>
+    </div>
+  </div>
+</div>

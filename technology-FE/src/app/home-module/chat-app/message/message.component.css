@@ -1,0 +1,47 @@
+.info-chat__item {
+  display: flex;
+  margin-top: 18px;
+}
+
+.info-chat__item .info-chat img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.info-chat__item .info-chat .name {
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.info-chat__item .text-chat {
+  background: #fff;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-top: 6px;
+}
+
+.info-chat__item .text-chat p {
+  margin: 0;
+  text-align: left;
+}
+
+/* User */
+.info-chat__item.user {
+  justify-content: flex-end;
+}
+
+.info-chat__item.user .text-chat {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.info-chat__item.user .time {
+  text-align: right;
+  color: #888;
+  font-size: 1.3rem;
+}

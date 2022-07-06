@@ -1,6 +1,21 @@
 <app-header-top></app-header-top>
 <app-header-middle (productSearch)="getValueHeaderSearch($event)"></app-header-middle>
 <app-header-navbar></app-header-navbar>
+<app-chat-app></app-chat-app>
+
+<!--<div id="toasts" class="toast__container">-->
+<!--  <div class="toast-alert success">-->
+<!--    <div class="d-flex align-items-center">-->
+<!--      <i class="circle fa-solid fa-check"></i>-->
+<!--      <div class="message">-->
+<!--        <span class="message_main">This is success message</span>-->
+<!--        <span class="sub_message">This is success message</span>-->
+<!--      </div>-->
+<!--      <div class="count-down"></div>-->
+<!--    </div>-->
+<!--    <i class="circle icon-close fa-solid fa-xmark"></i>-->
+<!--  </div>-->
+<!--</div>-->
 
 <div *ngIf="productsSearch == null" class="home__container">
   <!-- Introduction -->
@@ -279,7 +294,7 @@
       </div>
 
       <div class="row">
-        <div *ngFor="let product of products |  paginate: {id: 'productsHome' ,itemsPerPage: 8, currentPage: p }" class="col-3">
+        <div *ngFor="let product of products" class="col-3">
           <div class="single-product">
             <div class="single-product__img-group">
               <img class="single-product__img" src="./assets/img/header/product-1.jpg" alt="">
@@ -326,8 +341,6 @@
             </div>
           </div>
         </div>
-        <pagination-controls maxSize="8" previousLabel="" nextLabel="" (click)="showMess()"
-                             id="productsHome" (pageChange)="currentPage = $event"></pagination-controls>
       </div>
     </div>
   </div>

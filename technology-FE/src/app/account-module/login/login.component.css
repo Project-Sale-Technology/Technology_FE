@@ -38,6 +38,19 @@
   margin-right: 8px;
 }
 
+.login__page-form .login-error__alert {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.login__page-form .login-error__alert span {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
 .login__page-form .social .social-item.facebook {
   border-color: #3b5998;
   background-color: transparent;
