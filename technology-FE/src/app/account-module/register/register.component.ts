@@ -65,7 +65,6 @@ export class RegisterComponent implements OnInit {
     this.accountService.handleRegister(this.userSaved).subscribe(data => {
       /* Set user for firebase */
       this.authService.setUserData(data.id,data.fullName , data.email , false);
-
       this.router.navigateByUrl('/customer/login');
     });
   }

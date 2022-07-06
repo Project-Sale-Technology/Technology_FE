@@ -304,6 +304,23 @@ li {
   justify-content: space-between;
   padding: 0 12px;
   background-color: #fff;
+  position: relative;
+}
+
+.alert__error-notification {
+  --growthFrom: 0.3;
+  --growthTo: 1;
+  position: absolute;
+  top: -65px;
+  background-color: var(--error-color);
+  color: #fff;
+  padding: 0 20px;
+  font-size: 1.5rem;
+  border-radius: 3px;
+  animation: fadeIn 0.4s , fadeInUp 0.3s , growth 0.3s;
+  transform-origin: bottom left;
+  transition: all 0.3s;
+  visibility: hidden;
 }
 
 .screen-chat .chat-bar .message {
@@ -331,19 +348,22 @@ li {
 
 .chat-bar__function .send-group,
 .chat-bar__function .attachment-group label {
-  padding: 12px 6px;
+  padding: 12px 10px;
   cursor: pointer;
+  border: none;
+  background: transparent;
+  outline: none;
 }
 
 .chat-bar__function .attachment-group label i,
 .chat-bar__function .send-group i {
-  font-size: 1.6rem;
+  font-size: 2rem;
   transition: all 0.3s;
 }
 
 .chat-bar__function .attachment-group label:hover i,
 .chat-bar__function .send-group:hover i {
-  color: var(--button-color);
+  color: var(--primary-color-blue);
 }
 
 .screen-chat__footer-group {

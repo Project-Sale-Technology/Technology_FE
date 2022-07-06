@@ -39,12 +39,12 @@
 
         <div class="info-user__group">
           <span>Name: </span>
-          <p>Anh Tuấn</p>
+          <p>{{userCurrently.name}}</p>
         </div>
 
         <div class="info-user__group">
           <span>E-mail: </span>
-          <p>nguyenhatuan@gmail.com</p>
+          <p>{{userCurrently.email}}</p>
         </div>
       </div>
 
@@ -55,23 +55,8 @@
           </div>
 
           <div class="info-chat__item-right-area">
-            <span class="name">Anh Tuấn</span>
-            <span class="time">18:11</span>
-
-            <div class="text-chat">
-              <p>Hello . How may I help you?Hello . How may I help youHello . How may I help youHello . How may I help youHello . How may I help you</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="info-chat__item">
-          <div class="img-group">
-            <img src="./assets/avatar.avif" alt="">
-          </div>
-
-          <div class="info-chat__item-right-area">
-            <span class="name">Anh Tuấn</span>
-            <span class="time">18:11</span>
+            <span class="name">Admin </span>
+            <span class="time">{{userCurrently.loginTime | date :'dd/MM/yyyy'}}</span>
 
             <div class="text-chat">
               <p>Hello . How may I help you?</p>
@@ -79,40 +64,19 @@
           </div>
         </div>
 
-        <div class="info-chat__item user">
-          <div class="info-chat__item-right-area">
-            <span class="time">18:11</span>
-
-            <div class="text-chat">
-              <p>Hello . How may I help you?Hello . How may I help you?Hello . How may I help you?Hello . How may I help you?Hello . How may I help you?Hello . How may I help you?Hello . How may I help you?    </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="info-chat__item user">
-          <div class="info-chat__item-right-area">
-            <span class="time">18:11</span>
-
-            <div class="text-chat">
-              <p>Hello . How may I help you?</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="info-chat__item user">
-          <div class="info-chat__item-right-area">
-            <span class="time">18:11</span>
-
-            <div class="text-chat">
-              <p>Hello . How may I help you?</p>
-            </div>
-          </div>
+        <div *ngFor="let message of messagesSent | async">
+          <app-message [chatMessage]="message"></app-message>
         </div>
       </div>
     </div>
 
-    <div class="chat-bar">
-      <input class="message" type="text" placeholder="Write a message">
+    <form [formGroup]="formChat" (ngSubmit)="sendMessage()" class="chat-bar">
+      <div [style.visibility]="showNotiError ? 'visible' : 'hidden'"
+           [style.opacity]="showNotiError?'1':'0'" id="notiError" class="alert__error-notification error-alert">
+        <span>Don't let it blank before sending a message</span>
+      </div>
+
+      <input class="message" type="text" placeholder="Write a message" formControlName="message">
 
       <div class="chat-bar__function">
         <div class="attachment-group">
@@ -120,14 +84,14 @@
             <i class="fa-solid fa-link"></i>
           </label>
 
-          <input type="file" id="attachment-input">
+          <input type="file" id="attachment-input" formControlName="fileUpload">
         </div>
 
-        <div class="send-group">
+        <button type="submit" class="send-group">
           <i class="fa-solid fa-paper-plane"></i>
-        </div>
+        </button>
       </div>
-    </div>
+    </form>
 
     <div class="screen-chat__footer-group">
       <p>Powered by <strong>A0721I1</strong></p>

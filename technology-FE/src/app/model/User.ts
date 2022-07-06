@@ -16,5 +16,6 @@ export class User {
   feedback: Feedback;
   status: boolean;
   role: Role;
+  loginTime?: Date;
   token?: string;
 }

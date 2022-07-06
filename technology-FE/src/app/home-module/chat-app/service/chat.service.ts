@@ -24,16 +24,14 @@ export class ChatService {
     const email = this.user.email;
     this.chatMessages = this.getMessages();
 
-    if(this.imageUrl) {
-      /* Properties must be like properties in class Chat Message */
-      this.chatMessages.push({
-        message: msg,
-        timeSent: timeStamp,
-        userName: email,
-        imgUrl: this.imageUrl,
-        email: email
-      });
-    }
+    /* Properties must be like properties in class Chat Message */
+    this.chatMessages.push({
+      message: msg,
+      timeSent: timeStamp,
+      userName: email,
+      // imgUrl: this.imageUrl,
+      email: email
+    });
   }
 
   /* Get messages */
@@ -45,12 +43,14 @@ export class ChatService {
   /* Get and format time */
   getTimeStamp(): any {
     const now = new Date();
-    const date = now.getFullYear() + '/' +
-      (now.getMonth() + 1) + '/' + now.getUTCDate();
+    const date = now.getDate() + '/' +
+      (now.getMonth() + 1) + '/' + now.getFullYear();
 
-    const time = now.getUTCHours() + ':' +
-      (now.getUTCMinutes() + 1) + ':' + now.getUTCSeconds();
-    return date + ' ' + time;
+    const time = now.getHours() + ':' +
+      (now.getMinutes() > 10 ? '' : '0'+ now.getMinutes());
+
+    const timeShow = now.getHours() > 12? 'PM':'AM';
+    return date + ' ' + time + ' ' + timeShow;
   }
 
   constructor(private storage: AngularFireStorage, private db: AngularFireDatabase) {

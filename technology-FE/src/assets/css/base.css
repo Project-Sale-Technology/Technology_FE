@@ -10,13 +10,13 @@
   --green-second-color: #83bcbd;
   --yellow-color: #f2994a;
 
-  --success-color:  rgb(0 ,128 , 0);
-  --warning-color: rgba(203 ,181 , 16);
-  --error-color: rgba(244, 16 ,16);
+  --success-color: rgb(0, 128, 0);
+  --warning-color: rgba(203, 181, 16);
+  --error-color: #EF5350;
 
-  --success-light-color: rgba(0 ,128 , 0 , 0.4);
-  --warning-light-color: rgba(203 ,181 , 16 , 0.4);
-  --error-light-color: rgba(244, 16 ,16, 0.4);
+  --success-light-color: rgba(0, 128, 0, 0.4);
+  --warning-light-color: rgba(203, 181, 16, 0.4);
+  --error-light-color: rgba(244, 16, 16, 0.4);
 }
 
 * {
@@ -297,7 +297,6 @@ input.error-border {
   -webkit-animation-duration: 1s;
   -webkit-animation-fill-mode: both;
 }
-
 /* Animation effect like music or video */
 @keyframes border-pulsate {
   0% {

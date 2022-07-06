@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFireStorage} from "@angular/fire/storage";
 import {AngularFireDatabase, AngularFireList} from "@angular/fire/database";
+import {Observable} from "rxjs";
 
 const BASE_PATH = "users/";
 
@@ -17,6 +18,13 @@ export class AuthService {
   /* Logout */
   logout() {
     this.setStatusForUser(false , JSON.parse(window.localStorage.getItem('user')).id);
+  }
+
+  /* Get all user from database */
+  getUsers(): Observable<any> {
+    const path = `${BASE_PATH}/`;
+    this.users = this.db.list(path);
+    return this.users.valueChanges();
   }
 
   /* Set status for user */
