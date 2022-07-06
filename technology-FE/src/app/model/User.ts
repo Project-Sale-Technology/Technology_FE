@@ -14,6 +14,8 @@ export class User {
   province: Province;
   order: Order;
   feedback: Feedback;
+  status: boolean;
   role: Role;
+  loginTime?: Date;
   token?: string;
 }

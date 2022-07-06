@@ -1,0 +1,19 @@
+.pd-r {
+  padding-right: 0 !important;
+}
+
+.pd-l {
+  padding-left: 0 !important;
+}
+
+.home__admin-container {
+  overflow: hidden;
+}
+
+.home-admin__right-area {
+  border-left: 1px solid #dadada;
+}
+
+.home-admin {
+
+}

@@ -3,10 +3,9 @@ import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import {User} from "../../model/User";
 import {ResetPasswordService} from "../reset-password/service/reset-password.service";
+import {CookieService} from "ngx-cookie-service";
 
-export function checkPwdUsed(resetPasswordService: ResetPasswordService): AsyncValidatorFn  {
-  /* Get token */
-  const token = window.localStorage.getItem('reset_token');
+export function checkPwdUsed(resetPasswordService: ResetPasswordService , token: string): AsyncValidatorFn  {
   return (control: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
     return resetPasswordService.checkPasswordUsed(token , control.value).pipe(map(
       (user: User) => {

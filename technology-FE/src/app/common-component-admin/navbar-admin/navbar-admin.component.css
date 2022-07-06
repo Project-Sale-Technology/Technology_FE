@@ -1,0 +1,52 @@
+
+.navbar__container {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo__group {
+  width: 200px;
+  margin: auto;
+}
+
+.logo__group img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.menu-navbar__admin {
+  margin: 32px 0 0 0;
+}
+
+.menu-navbar__admin li {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  transition: all 0.2s;
+  border-radius: 3px;
+}
+
+.menu-navbar__admin li.active {
+  background-color: var(--primary-color-blue);
+  color: #fff !important;
+}
+
+.menu-navbar__admin li:hover {
+  background-color: var(--primary-color-blue);
+  color: #fff !important;
+  cursor: pointer;
+}
+
+.menu-navbar__admin li i {
+  font-size: 1.6rem;
+  margin-right: 8px;
+}
+
+.menu-navbar__admin li a {
+  font-size: 1.6rem;
+  display: block;
+
+}
