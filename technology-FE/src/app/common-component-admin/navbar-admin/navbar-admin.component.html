@@ -3,25 +3,25 @@
     <img src="assets/img/header/logo.svg">
   </div>
 
-  <ul class="menu-navbar__admin">
-    <li class="active">
-      <i class="ti-home"></i>
-      <a>Home</a>
-    </li>
+  <div class="menu-navbar__admin">
+    <a class="menu-navbar__admin-item active" [routerLink]="['/admin']">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
 
-    <li>
-      <i class="ti-home"></i>
-      <a>Home</a>
-    </li>
+    <a class="menu-navbar__admin-item" [routerLink]="['/admin/customer-consultant']">
+      <i class="fa-solid fa-user"></i>
+      <span>Customer Consulting</span>
+    </a>
 
-    <li>
-      <i class="ti-home"></i>
-      <a>Home</a>
-    </li>
+    <a class="menu-navbar__admin-item">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
 
-    <li>
-      <i class="ti-home"></i>
-      <a>Home</a>
-    </li>
-  </ul>
+    <a class="menu-navbar__admin-item">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+  </div>
 </div>

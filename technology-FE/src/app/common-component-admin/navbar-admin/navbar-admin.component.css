@@ -21,32 +21,29 @@
   margin: 32px 0 0 0;
 }
 
-.menu-navbar__admin li {
-  display: flex;
-  align-items: center;
+.menu-navbar__admin-item {
   padding: 8px 12px;
   transition: all 0.2s;
   border-radius: 3px;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  color: var(--primary-color) !important;
+  font-weight: 500;
 }
 
-.menu-navbar__admin li.active {
+.menu-navbar__admin-item.active {
   background-color: var(--primary-color-blue);
   color: #fff !important;
 }
 
-.menu-navbar__admin li:hover {
+.menu-navbar__admin-item:hover {
   background-color: var(--primary-color-blue);
   color: #fff !important;
   cursor: pointer;
 }
 
-.menu-navbar__admin li i {
+.menu-navbar__admin-item i {
   font-size: 1.6rem;
   margin-right: 8px;
-}
-
-.menu-navbar__admin li a {
-  font-size: 1.6rem;
-  display: block;
-
 }

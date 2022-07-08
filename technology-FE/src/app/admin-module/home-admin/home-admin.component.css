@@ -15,5 +15,86 @@
 }
 
 .home-admin {
+  background-color: #fcfbfc;
+}
+/* Statistical table */
+.statistical__table-container {
+  padding: 20px;
+}
 
+.statistical__table-container .statistical__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  padding: 20px;
+  transition: all 0.3s;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+.statistical__table-container .statistical__item:hover {
+  background-color: var(--primary-color-blue);
+}
+
+.statistical__table-container .statistical__item:hover .header i {
+  background-color: #fff;
+  color: var(--primary-color-blue);
+}
+
+.statistical__table-container .statistical__item:hover .header h3.title ,
+.statistical__table-container .statistical__item:hover .header span.data ,
+.statistical__table-container .statistical__item:hover .footer span ,
+.statistical__table-container .statistical__item:hover .footer i {
+  color: #fff;
+}
+
+.statistical__table-container .statistical__item .header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+}
+
+.statistical__table-container .statistical__item .header i {
+  height: 55px;
+  width: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: #fcfbfc;
+  color: #83bcbd;
+  border-radius: 3px;
+}
+
+.statistical__table-container .statistical__item .title {
+  font-size: 1.9rem;
+  color: #888;
+  font-weight: 300;
+  margin: 12px 0;
+}
+
+.statistical__table-container .statistical__item .data {
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.statistical__table-container .statistical__item .footer {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  color: var(--primary-color-blue);
+  cursor: pointer;
+}
+
+.statistical__table-container .statistical__item .footer i {
+  font-size: 1.6rem;
+  margin-right: 6px;
+  transform: translateY(1px);
+}
+
+.statistical__table-container .statistical__item .footer span {
+  font-size: 1.6rem;
+  font-weight: 400;
 }

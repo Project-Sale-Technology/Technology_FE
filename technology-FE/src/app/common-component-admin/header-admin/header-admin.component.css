@@ -1,5 +1,5 @@
 .header__admin-container {
-  background-color: #fcfbfc;
+  background-color: #fff;
   border-bottom: 1px solid #dadada;
   display: flex;
   align-items: center;
@@ -25,6 +25,7 @@
   transition: all 0.3s;
   font-size: 1.8rem;
   cursor: pointer;
+  background-color: #fcfbfc;
 }
 
 .header__admin-container .notification__item i:hover {
